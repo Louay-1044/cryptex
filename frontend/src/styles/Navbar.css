@@ -1,0 +1,128 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;                     /* full width */
+    box-sizing: border-box;          /* padding doesn't overflow */
+}
+
+.navbar.dark {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;               /* pushes nav links to the right */
+    margin-right: 20px;              /* gap between links and logout */
+}
+
+.nav-links button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nav-links button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 0, 0, 0.5);
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 90px;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.logout-btn {
+    background-color: rgba(255, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.login-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(17, 255, 0, 0.8);
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 90px;
+}
+
+.login-btn:hover {
+    background-color: rgba(17, 255, 0, 0.8);
+}
+
+.login-btn {
+    background-color: rgba(17, 255, 0, 0.8);
+    cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown-menu button {
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-img:hover {
+  border-color: #888;
+}

@@ -1,0 +1,350 @@
+:root {
+    --bg: #000;
+    --text: rgba(255, 255, 255, 0.96);
+    --placeholder: rgba(255, 255, 255, 0.55);
+}
+
+/* full viewport */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+input[type='text'] {
+    background: rgba(0, 0, 0, 1) !important;
+    border: 0 !important;
+}
+
+.navWrapper {
+    background: var(--bg);
+}
+
+/* layout: title ~18% from top, bar in middle */
+.cryptai-page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 16px 40px; /* leave space for title/search at top */
+}
+
+/* TITLE — centered horizontally, fixed from top */
+.cryptai-title {
+    margin: 0 0 20rem;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 700;
+    color: var(--text);
+    text-align: center;
+}
+
+.cryptai-main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* center search vertically when no responses yet */
+.cryptai-main.no-responses {
+    min-height: calc(100vh - 140px); /* title + padding */
+}
+
+/* normal flow with responses */
+.cryptai-main.has-responses {
+    justify-content: flex-start;
+}
+
+/* SEARCH WRAP — sits roughly middle of page */
+.cryptai-search-wrap {       /* push down to mid-page */
+    width: min(50vw, 700px);
+    min-width: 320px;
+    border-radius: 999px;
+    text-align: center;
+
+    /* BORDER ONLY: animated gradient stroke using border-image */
+    border: 2px solid transparent;
+    background: linear-gradient(#000 0 0) padding-box,
+    linear-gradient(90deg,
+            rgba(255,215,0,0.35),
+            rgba(255,140,0,0.35),
+            rgba(0,180,255,0.35),
+            rgba(0,255,150,0.35),
+            rgba(255,215,0,0.35)
+    ) border-box;
+    animation: borderShift 8s linear infinite;
+}
+
+/* INPUT — dark pill, NO color animation */
+.cryptai-search {
+    width: 90% !important;
+    border: none;
+    outline: none;
+    border-radius: inherit;
+    margin-top: 0 !important;
+    padding: 1.2rem 0 !important;
+    background: rgba(0, 0, 0, 0.8);  /* solid dark */
+    color: var(--text);
+    font-size: 1.05rem;
+    box-sizing: border-box;
+}
+.search-center {
+    margin-bottom: 1.5rem;
+}
+.search-top {
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.cryptai-search::placeholder {
+    color: var(--placeholder);
+}
+
+/* subtle RGB motion along the border only */
+@keyframes borderShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* smooth fade-up entrance */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s ease-out forwards;
+}
+
+.fade-up-delay {
+    opacity: 0;
+    animation: fadeUp 0.7s ease-out 0.2s forwards;
+}
+
+.cryptai-hints {
+    margin-top: 1.2rem;              /* space under search pill */
+    height: 1.4rem;                  /* lock height so layout doesn’t jump */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* base style: similar to placeholder */
+.hint-text {
+    position: absolute;
+    font-size: 1rem;
+    color: var(--placeholder);
+    opacity: 0;
+    transform: translateY(12px);
+    animation: hintCycle 12s infinite ease-in-out;
+}
+
+/* each line gets a different offset in the cycle */
+.hint-1 { animation-delay: 0s; }
+.hint-2 { animation-delay: 4s; }
+.hint-3 { animation-delay: 8s; }
+
+/* fade up, hold, fade out, move down */
+@keyframes hintCycle {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    8% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    33% {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+.cryptai-typing {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.35rem;
+    height: 1.4rem;
+    margin-bottom: 3rem;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--placeholder);
+    animation: bounceDot 0.9s infinite ease-in-out;
+}
+
+.dot-2 { animation-delay: 0.15s; }
+.dot-3 { animation-delay: 0.3s; }
+
+@keyframes bounceDot {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(-6px);
+        opacity: 1;
+    }
+}
+
+.cryptai-reply {
+    margin-top: 2rem;
+    max-width: 700px;
+    color: var(--text);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.cryptai-reply p {
+    margin: 0 0 0.75rem;
+}
+
+.cryptai-reply strong {
+    font-weight: 600;
+}
+
+/* container that grows with responses */
+.cryptai-responses {
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+/* tweak markdown inside */
+.cryptai-response-card p {
+    margin: 0 0 0.5rem;
+    line-height: 1.5;
+}
+.cryptai-response-card p:last-child {
+    margin-bottom: 0;
+}
+
+.cryptai-response-card strong {
+    display: block;
+    margin-top: 3rem;
+    margin-bottom: 0.25rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    position: relative;
+    text-shadow:
+            0 0 10px rgba(255, 255, 255, 0.5)
+}
+
+/* thin horizontal line above each bold heading */
+.cryptai-response-card strong::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -4.5rem;                    /* distance above the text */
+    height: 1px;
+    background: rgba(255, 255, 255, 0.18);  /* subtle grey line */
+    margin-top: 3rem;
+}
+
+@keyframes responseReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cryptai-response-card {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 2rem 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 400;
+    align-self: auto;
+
+    opacity: 0;
+    animation: responseReveal 0.6s ease-out forwards;
+}
+
+.message-user {
+    align-self: flex-end;
+    max-width: 70%;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1rem 2rem;
+}
+
+.message-assistant {
+    align-self: stretch;
+}
+
+.cryptai-response-card ul {
+    list-style-type: disc; /* solid bullets */
+    margin-bottom: 2rem;
+}
+
+.cryptai-response-card ol {
+    margin: 0.5rem 0 0.5rem 1.2rem;
+    padding-left: 1.2rem;
+    list-style-type: decimal;        /* numbered */
+}
+
+.cryptai-response-card li {
+    list-style: none;
+}
+
+.cryptai-response-card .li-body {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 3rem;
+}
+
+.cryptai-response-card .li-body::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+/* heading line above, no bullet */
+.cryptai-response-card .li-heading {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}

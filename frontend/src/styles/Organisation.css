@@ -1,0 +1,479 @@
+.organisation-page {
+  min-height: 100vh;
+  background: #080810;
+  color: #c8c8e8;
+  font-family: sans-serif;
+}
+
+.organisation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+}
+
+/* Header */
+.organisation-header {
+  padding: 14px 20px 18px;
+  border: 1px solid #2a2a4a;
+  background: #0f0f1e;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.organisation-header h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #e0e0ff;
+  margin: 0;
+  text-align: center;
+}
+
+.organisation-header p {
+  font-size: 0.75rem;
+  color: #6666aa;
+  font-family: monospace;
+  margin-top: 6px;
+  line-height: 1.6;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.organisation-error {
+  color: #e85454;
+  font-family: monospace;
+  font-size: 0.78rem;
+  margin: 0 0 18px;
+}
+
+/* Generic panel styling */
+.organisation-loading-card,
+.organisation-section,
+.organisation-hero-card,
+.organisation-card,
+.organisation-trader-card,
+.organisation-history-card,
+.organisation-create-card {
+  background: #0f0f1e;
+  border: 1px solid #2a2a4a;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.organisation-section {
+  margin-top: 24px;
+  padding: 18px;
+}
+
+.organisation-section h2 {
+  font-size: 0.82rem;
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a9ad6;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.organisation-section > p {
+  color: #8b8bbb;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.organisation-loading-card {
+  padding: 24px;
+  text-align: center;
+  font-family: monospace;
+  color: #6666aa;
+}
+
+/* Hero */
+.organisation-hero-card {
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.organisation-hero-left {
+  width: 100%;
+  text-align: center;
+}
+
+.organisation-hero-left h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e0e0ff;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.organisation-hero-left p {
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.76rem;
+  color: #6666aa;
+  text-align: center;
+}
+
+.organisation-hero-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Cards and grids */
+.organisation-control-grid,
+.organisation-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.organisation-card {
+  padding: 18px;
+}
+
+.organisation-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #e0e0ff;
+  letter-spacing: 0.03em;
+}
+
+.organisation-card p {
+  margin: 0 0 14px 0;
+  color: #7d7db0;
+  font-family: monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.organisation-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.organisation-card-top h3 {
+  margin: 0;
+}
+
+.organisation-card-top p {
+  margin: 4px 0 0 0;
+}
+
+.organisation-highlight-value {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #a0d8ff;
+  font-family: monospace;
+}
+
+/* Stats */
+.organisation-stat-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.organisation-history-card .organisation-stat-row {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.organisation-stat-box {
+  background: #13132a;
+  border: 1px solid #2a2a4a;
+  border-radius: 4px;
+  padding: 14px;
+  text-align: center;
+}
+
+.organisation-stat-box h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.68rem;
+  font-family: monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6666aa;
+  font-weight: 700;
+}
+
+.organisation-stat-box p {
+  margin: 0;
+  color: #c8c8e8;
+  font-size: 0.92rem;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+/* Forms */
+.organisation-form-row,
+.organisation-form-column {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.organisation-form-column {
+  flex-direction: column;
+}
+
+.organisation-input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #2a2a4a;
+  border-radius: 4px;
+  background: #13132a;
+  color: #c8c8e8;
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 0.82rem;
+  outline: none;
+}
+
+.organisation-input:focus {
+  border-color: #6666aa;
+}
+
+.organisation-input::placeholder {
+  color: #6666aa;
+}
+
+/* Buttons */
+.organisation-btn {
+  padding: 8px 16px;
+  border-radius: 2px;
+  background: #13132a;
+  border: 1px solid #2a2a4a;
+  color: #c8c8e8;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* default hover */
+.organisation-btn:hover {
+  border-color: #6666aa;
+  color: #e0e0ff;
+  background: #1a1a36;
+}
+
+.organisation-btn-success {
+  border: 1px solid #2f7a4f;
+  color: #7cfc98;
+  background: transparent;
+}
+
+.organisation-btn-success:hover {
+  border-color: #7cfc98;
+  background: rgba(124, 252, 152, 0.08);
+  color: #d7ffe1;
+}
+
+.organisation-btn-danger {
+  border: 1px solid #7a2f3f;
+  color: #ff9b9b;
+  background: transparent;
+}
+
+.organisation-btn-danger:hover {
+  border-color: #ff9b9b;
+  background: rgba(255, 155, 155, 0.08);
+  color: #ffe1e1;
+}
+
+/* Traders */
+.organisation-trader-list,
+.organisation-history-list,
+.organisation-holdings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.organisation-trader-card {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.organisation-trader-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.organisation-trader-main h3 {
+  margin: 0 0 6px 0;
+  font-size: 1rem;
+  color: #e0e0ff;
+}
+
+.organisation-trader-main p {
+  margin: 0;
+  color: #7d7db0;
+  font-family: monospace;
+  font-size: 0.76rem;
+}
+
+.organisation-trader-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.organisation-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-family: monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: linear-gradient(180deg, #1c2a4a 0%, #131b36 100%);
+  border: 1px solid #4d6bb3;
+  color: #a0d8ff;
+}
+
+/* Holdings */
+.organisation-holding-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: #13132a;
+  border: 1px solid #2a2a4a;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.organisation-holding-item strong {
+  color: #a0d8ff;
+}
+
+/* History */
+.organisation-history-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  justify-content: center;
+  text-align: center;
+}
+
+.organisation-history-header h2 {
+  text-align: left;
+  margin: 0 0 6px 0;
+}
+
+.organisation-history-header p {
+  margin: 0;
+  color: #6666aa;
+  font-family: monospace;
+  font-size: 0.76rem;
+}
+
+.organisation-history-header > div {
+  width: 100%;
+  text-align: center;
+}
+
+.organisation-history-card {
+  padding: 16px;
+}
+
+.organisation-history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.organisation-history-tag {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid #2a2a4a;
+}
+
+.organisation-history-buy {
+  background: rgba(124, 252, 152, 0.08);
+  color: #7cfc98;
+}
+
+.organisation-history-sell {
+  background: rgba(232, 84, 84, 0.08);
+  color: #ff9b9b;
+}
+
+/* Empty text */
+.organisation-empty-text {
+  color: #6666aa;
+  font-family: monospace;
+  font-size: 0.76rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .organisation-control-grid,
+  .organisation-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .organisation-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .organisation-stat-row,
+  .organisation-history-card .organisation-stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .organisation-hero-card,
+  .organisation-trader-card,
+  .organisation-history-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .organisation-form-row {
+    flex-direction: column;
+  }
+
+  .organisation-highlight-value {
+    text-align: left;
+  }
+}

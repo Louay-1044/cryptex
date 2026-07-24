@@ -1,0 +1,80 @@
+.balance-widget {
+  width: 100%;
+  background: #1a1a2e;
+  border-radius: 12px;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  padding: 1.75rem 2rem;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  box-sizing: border-box;
+}
+
+.balance-widget:hover {
+  opacity: 0.88;
+}
+
+.balance-widget--active {
+  background: #4f46e5;
+  border-color: transparent;
+}
+
+.balance-widget__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  margin: 0 0 8px;
+}
+
+.balance-widget--active .balance-widget__label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.balance-widget__amount {
+  font-size: 36px;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.balance-widget--active .balance-widget__amount {
+  color: #fff;
+}
+
+.balance-widget__topup {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.balance-widget__topup-btn {
+  font-size: 14px;
+  padding: 9px 20px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.balance-widget--active .balance-widget__topup-btn {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.balance-widget__topup-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.balance-widget__topup-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.balance-widget__topup-msg {
+  font-size: 13px;
+  margin: 10px 0 0;
+}
+
+.balance-widget__topup-msg--success { color: #34d399; }
+.balance-widget__topup-msg--error   { color: #f87171; }

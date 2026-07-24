@@ -1,0 +1,165 @@
+/* ─── Overlay ─────────────────────────────────────────────────────────────── */
+.asm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: asm-fade-in 0.15s ease;
+}
+
+@keyframes asm-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Modal card ──────────────────────────────────────────────────────────── */
+.asm-modal {
+  background: #fff;
+  border-radius: 28px;
+  width: 360px;
+  max-width: 94vw;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: asm-slide-up 0.18s ease;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+}
+
+@keyframes asm-slide-up {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ─── Header ──────────────────────────────────────────────────────────────── */
+.asm-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.asm-brand {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5f6368;
+  margin: 0 0 16px;
+  letter-spacing: 0.3px;
+}
+
+.asm-avatar {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.asm-avatar--large {
+  width: 64px;
+  height: 64px;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.asm-avatar--small {
+  width: 36px;
+  height: 36px;
+  font-size: 15px;
+  margin-right: 14px;
+}
+
+.asm-active-name {
+  font-size: 16px;
+  font-weight: 400;
+  color: #202124;
+  margin: 0;
+}
+
+/* ─── Account list ────────────────────────────────────────────────────────── */
+.asm-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.asm-account-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s;
+}
+
+.asm-account-row:hover:not(:disabled) {
+  background: #f1f3f4;
+}
+
+.asm-account-row--active {
+  cursor: default;
+}
+
+.asm-account-name {
+  flex: 1;
+  font-size: 14px;
+  color: #202124;
+}
+
+.asm-check-icon {
+  font-size: 16px;
+  color: #1a73e8;
+  font-weight: 700;
+}
+
+/* ─── Actions ─────────────────────────────────────────────────────────────── */
+.asm-actions {
+  padding: 8px 0;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.asm-action-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #202124;
+  text-align: left;
+  transition: background 0.12s;
+}
+
+.asm-action-btn:hover {
+  background: #f1f3f4;
+}
+
+.asm-action-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e8eaed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #5f6368;
+  margin-right: 14px;
+  flex-shrink: 0;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.asm-action-icon--signout {
+  transform: rotate(180deg);
+}
