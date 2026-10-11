@@ -42,6 +42,10 @@ services:
     environment:
       - DEBUG=True
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/cryptex
+      - REDIS_URL=redis://redis:6379/0
+    env_file:
+      - path: ./backend/.env
+        required: false
     volumes:
       - shared:/app/shared
     depends_on:
