@@ -33,7 +33,7 @@ def query_with_code(message: str, code: str) -> str:
     )
 
     response = client.models.generate_content(
-        model="models/gemini-2.5-flash-lite",  # <-- replace with the exact name from list()
+        model="models/gemini-3.5-flash-lite",
         contents=[query_context],
     )
 
@@ -53,7 +53,7 @@ def query_with_market(message: str) -> str:
     )
 
     response = client.models.generate_content(
-        model="models/gemini-2.5-flash-lite",  # or keep gemini-2.5-flash if you prefer
+        model="models/gemini-3.5-flash-lite",
         contents=[query_context],
     )
 

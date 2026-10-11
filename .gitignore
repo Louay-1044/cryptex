@@ -1,0 +1,15 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Zig
+zig-out/
+.zig-cache/
+
+.DS_Store

@@ -1,0 +1,11 @@
+Django>=6.0,<6.1
+djangorestframework>=3.16
+django-cors-headers>=4.6
+dj-database-url>=2.3
+psycopg[binary]>=3.2
+redis>=5.2
+channels>=4.2
+daphne>=4.1
+httpx>=0.28
+google-genai>=1.0
+python-dotenv>=1.0
